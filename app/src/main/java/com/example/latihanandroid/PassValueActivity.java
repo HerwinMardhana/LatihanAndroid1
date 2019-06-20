@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.example.latihanandroid.model.Mahasiswa;
+
 public class PassValueActivity extends AppCompatActivity {
 
     TextView tvData;
@@ -25,8 +27,13 @@ public class PassValueActivity extends AppCompatActivity {
         tvKontak=findViewById(R.id.tvKontak);
 
         String data=getIntent().getStringExtra("data");
+        Mahasiswa mhs=getIntent().getParcelableExtra("data_mahasiswa");
 
 
         tvData.setText(data);
+        tvNim.setText(mhs.getNim());
+        tvNama.setText(mhs.getNama());
+        tvAlamat.setText(mhs.getAlamat());
+        tvKontak.setText(mhs.getKontak());
     }
 }

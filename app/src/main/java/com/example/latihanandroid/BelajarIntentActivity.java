@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.latihanandroid.model.Mahasiswa;
+
 import org.w3c.dom.Text;
 
 public class BelajarIntentActivity extends AppCompatActivity {
@@ -38,6 +40,15 @@ public class BelajarIntentActivity extends AppCompatActivity {
                 Intent intent=new Intent(BelajarIntentActivity.this,PassValueActivity.class);
                 intent.putExtra("data",inputdata.getText().toString());
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+
+                Mahasiswa mhs=new Mahasiswa();
+                mhs.setNama("Herwin");
+                mhs.setNim("1007055124");
+                mhs.setAlamat("Jl.Perjuangan");
+                mhs.setKontak("082154174441");
+
+                intent.putExtra("data_mahasiswa",mhs);
+
                 startActivity(intent);
             }
         });
