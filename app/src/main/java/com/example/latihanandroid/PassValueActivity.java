@@ -17,6 +17,7 @@ public class PassValueActivity extends AppCompatActivity {
 
         String data=getIntent().getStringExtra("data");
 
+
         tvData.setText(data);
     }
 }

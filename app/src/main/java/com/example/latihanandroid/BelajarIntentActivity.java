@@ -37,6 +37,7 @@ public class BelajarIntentActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent=new Intent(BelajarIntentActivity.this,PassValueActivity.class);
                 intent.putExtra("data",inputdata.getText().toString());
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
             }
         });
