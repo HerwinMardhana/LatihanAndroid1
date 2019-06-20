@@ -61,19 +61,23 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
+        android:layout_marginEnd="8dp"
         android:background="#00BCD4"
         android:text="+"
+        app:layout_constraintEnd_toStartOf="@+id/btnKurang"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nilai2" />
 
     <Button
         android:id="@+id/btnKurang"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
         android:background="#00BCD4"
         android:text="-"
+        app:layout_constraintEnd_toStartOf="@+id/btnKali"
         app:layout_constraintStart_toEndOf="@+id/btnHitung"
         app:layout_constraintTop_toBottomOf="@+id/nilai2" />
 
@@ -81,10 +85,12 @@
         android:id="@+id/btnKali"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="10dp"
+        android:layout_marginEnd="8dp"
         android:background="#00BCD4"
         android:text="*"
+        app:layout_constraintEnd_toStartOf="@+id/btnBagi"
         app:layout_constraintStart_toEndOf="@+id/btnKurang"
         app:layout_constraintTop_toBottomOf="@+id/nilai2" />
 
@@ -92,10 +98,12 @@
         android:id="@+id/btnBagi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="10dp"
+        android:layout_marginEnd="8dp"
         android:background="#00BCD4"
         android:text="/"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btnKali"
         app:layout_constraintTop_toBottomOf="@+id/nilai2" />
 
