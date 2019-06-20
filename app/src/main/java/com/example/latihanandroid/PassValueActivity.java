@@ -26,8 +26,8 @@ public class PassValueActivity extends AppCompatActivity {
         tvAlamat=findViewById(R.id.tvAlamat);
         tvKontak=findViewById(R.id.tvKontak);
 
-        String data=getIntent().getStringExtra("data");
-        Mahasiswa mhs=getIntent().getParcelableExtra("data_mahasiswa");
+        String data=getIntent().getStringExtra(BelajarIntentActivity.DATA);
+        Mahasiswa mhs=getIntent().getParcelableExtra(BelajarIntentActivity.DATA_MHS);
 
 
         tvData.setText(data);
