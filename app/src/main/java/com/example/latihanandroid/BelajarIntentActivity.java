@@ -12,46 +12,45 @@ import com.example.latihanandroid.model.Mahasiswa;
 
 import org.w3c.dom.Text;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
 public class BelajarIntentActivity extends AppCompatActivity {
 
-    Button bMainactivity;
-    Button bSenddata;
+    @BindView(R.id.inputdata)
     EditText inputdata;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_belajar_intent);
+        ButterKnife.bind(this);
 
-        bMainactivity=findViewById(R.id.bMainactivity2);
-        bSenddata=findViewById(R.id.bSenddata);
-        inputdata=findViewById(R.id.inputdata);
 
-        bMainactivity.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(BelajarIntentActivity.this,MainActivity.class);
-                startActivity(intent);
-            }
-        });
+    }
+    @OnClick(R.id.bMainactivity2)
+    public void bukaMainActivity(){
+        Intent intent=new Intent(BelajarIntentActivity.this,MainActivity.class);
+        startActivity(intent);
+    }
 
-        bSenddata.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(BelajarIntentActivity.this,PassValueActivity.class);
-                intent.putExtra("data",inputdata.getText().toString());
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 
-                Mahasiswa mhs=new Mahasiswa();
-                mhs.setNama("Herwin");
-                mhs.setNim("1007055124");
-                mhs.setAlamat("Jl.Perjuangan");
-                mhs.setKontak("082154174441");
+    @OnClick(R.id.bSenddata)
+    public void sendData(){
+        Intent intent=new Intent(BelajarIntentActivity.this,PassValueActivity.class);
+        intent.putExtra("data",inputdata.getText().toString());
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 
-                intent.putExtra("data_mahasiswa",mhs);
+        Mahasiswa mhs=new Mahasiswa();
+        mhs.setNama("Herwin");
+        mhs.setNim("1007055124");
+        mhs.setAlamat("Jl.Perjuangan");
+        mhs.setKontak("082154174441");
 
-                startActivity(intent);
-            }
-        });
+        intent.putExtra("data_mahasiswa",mhs);
+
+        startActivity(intent);
     }
 
 }
